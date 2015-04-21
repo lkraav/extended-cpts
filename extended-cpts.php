@@ -155,9 +155,9 @@ class Extended_CPT {
 		if ( isset( $names['slug'] ) ) {
 			$this->post_slug = $names['slug'];
 		} else if ( isset( $names['plural'] ) ) {
-			$this->post_slug = $names['plural'];
+			$this->post_slug = sanitize_title( $names['plural'] );
 		} else {
-			$this->post_slug = $post_type . 's';
+			$this->post_slug = sanitize_title( $post_type . 's' );
 		}
 
 		if ( isset( $names['plural'] ) ) {
